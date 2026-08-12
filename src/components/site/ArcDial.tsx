@@ -93,7 +93,7 @@ export function ArcDial() {
       {/* static labels placed along the same arc */}
       <div className="absolute inset-x-0 top-[6%] mx-auto aspect-[640/340] w-full max-w-[1180px]">
         {items.map((it, i) => {
-          const p = polar(angles[i], R - 46);
+          const p = polar(angles[i]!, R - 46);
           const left = (p.x / 640) * 100;
           const top = (p.y / 340) * 100;
           return (
