@@ -10,11 +10,11 @@ export function Hero() {
       </p>
 
       {/* Roadster-style rotating arc dial wrapping the hero panel */}
-      <div className="relative mt-6 pb-24 md:pb-32">
+      <div className="relative mt-10 pb-24 md:pb-32">
         <ArcDial />
 
 
-        <div className="mx-auto w-[82%] md:w-[64%]">
+        <div className="mx-auto w-[80%] md:w-[56%]">
           <div className="relative overflow-hidden rounded-[2.5rem] md:rounded-[4rem]">
             <div className="absolute inset-0 bg-[radial-gradient(120%_100%_at_50%_0%,oklch(0.5_0.19_28)_0%,oklch(0.26_0.09_28)_55%,oklch(0.19_0.02_285)_100%)]" />
             <img
