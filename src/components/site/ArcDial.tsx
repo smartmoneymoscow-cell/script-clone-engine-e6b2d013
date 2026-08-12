@@ -55,7 +55,7 @@ export function ArcDial() {
   }, []);
 
   return (
-    <div ref={ref} className="relative w-full" style={{ aspectRatio: `${W} / ${VB_H}`, marginTop: "-4%" }}>
+    <div ref={ref} className="relative w-full" style={{ aspectRatio: `${W} / ${VB_H}`, marginTop: "-9%" }}>
       <svg viewBox={`0 ${VB_TOP} ${W} ${VB_H}`} className="absolute inset-0 size-full" aria-hidden>
 
         <defs>
