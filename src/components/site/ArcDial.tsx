@@ -17,7 +17,7 @@ const CY = 320;
 
 function polar(angleDeg: number, radius: number) {
   const a = (angleDeg * Math.PI) / 180;
-  const r3 = (n: number) => Math.round(n * 1000) / 1000;
+  const r3 = (n: number) => (Math.round(n * 100) / 100).toFixed(2);
   return { x: r3(CX + radius * Math.cos(a)), y: r3(CY + radius * Math.sin(a)) };
 }
 
@@ -71,23 +71,32 @@ export function ArcDial() {
             stroke="var(--color-border)"
             strokeWidth="1"
           />
-          {ticks.map((a, i) => {
-            const major = i % 5 === 0;
-            const p1 = polar(a, R - (major ? 16 : 8));
-            const p2 = polar(a, R);
-            return (
-              <line
-                key={a}
-                x1={p1.x}
-                y1={p1.y}
-                x2={p2.x}
-                y2={p2.y}
-                stroke={major ? "var(--color-primary)" : "var(--color-border)"}
-                strokeWidth={major ? 1.6 : 1}
-                opacity={major ? 0.9 : 0.55}
-              />
-            );
-          })}
+          <path
+            d={ticks
+              .map((a, i) => {
+                const major = i % 5 === 0;
+                const p1 = polar(a, R - (major ? 16 : 8));
+                const p2 = polar(a, R);
+                return `M${p1.x} ${p1.y}L${p2.x} ${p2.y}`;
+              })
+              .join(" ")}
+            stroke="var(--color-border)"
+            strokeWidth="1"
+            opacity="0.5"
+          />
+          <path
+            d={ticks
+              .filter((_, i) => i % 5 === 0)
+              .map((a) => {
+                const p1 = polar(a, R - 16);
+                const p2 = polar(a, R);
+                return `M${p1.x} ${p1.y}L${p2.x} ${p2.y}`;
+              })
+              .join(" ")}
+            stroke="var(--color-primary)"
+            strokeWidth="1.6"
+            opacity="0.9"
+          />
         </g>
       </svg>
 
