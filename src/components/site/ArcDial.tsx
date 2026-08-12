@@ -27,8 +27,8 @@ const TICKS = Array.from({ length: 71 }, (_, i) => START + ((END - START) * i) /
 
 const left = polar(END, R);
 const right = polar(START, R);
-const gapL = polar(92.6, R);
-const gapR = polar(87.4, R);
+const gapL = polar(91.3, R);
+const gapR = polar(88.7, R);
 
 export function ArcDial() {
   const ref = useRef<HTMLDivElement>(null);
