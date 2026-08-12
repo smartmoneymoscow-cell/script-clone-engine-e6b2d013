@@ -17,7 +17,8 @@ const CY = 320;
 
 function polar(angleDeg: number, radius: number) {
   const a = (angleDeg * Math.PI) / 180;
-  return { x: CX + radius * Math.cos(a), y: CY + radius * Math.sin(a) };
+  const r3 = (n: number) => Math.round(n * 1000) / 1000;
+  return { x: r3(CX + radius * Math.cos(a)), y: r3(CY + radius * Math.sin(a)) };
 }
 
 export function ArcDial() {
