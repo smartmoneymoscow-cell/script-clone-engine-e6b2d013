@@ -1,32 +1,5 @@
 import heroCar from "@/assets/hero-car.jpg";
-
-const arc = [
-  { num: "01", label: "о нас", href: "#about", pos: "left-0 top-[4%]" },
-  {
-    num: "02",
-    label: "доставка по России",
-    href: "#delivery",
-    pos: "left-0 top-[34%] md:left-[2%]",
-  },
-  {
-    num: "03",
-    label: "отзывы",
-    href: "#reviews",
-    pos: "left-1/2 -translate-x-1/2 top-[60%] md:top-[58%] text-center",
-  },
-  {
-    num: "04",
-    label: "вопросы и ответы",
-    href: "#faq",
-    pos: "right-0 top-[34%] text-right md:right-[2%]",
-  },
-  {
-    num: "05",
-    label: "контакты",
-    href: "#contacts",
-    pos: "right-0 top-[4%] text-right",
-  },
-];
+import { ArcDial } from "./ArcDial";
 
 export function Hero() {
   return (
@@ -36,24 +9,10 @@ export function Hero() {
         доставка авто под ключ за 45 дней
       </p>
 
-      {/* Roadster-style arc composition: numbered navigation wraps the hero panel */}
+      {/* Roadster-style rotating arc dial wrapping the hero panel */}
       <div className="relative mt-6 pb-24 md:pb-32">
-        <div className="pointer-events-none absolute inset-0">
-          {arc.map((a) => (
-            <a
-              key={a.num}
-              href={a.href}
-              className={`pointer-events-auto absolute ${a.pos} group`}
-            >
-              <span className="block text-xs font-extrabold tracking-widest text-primary">
-                {a.num}
-              </span>
-              <span className="mt-1 block text-xs text-muted-foreground transition-colors group-hover:text-foreground md:text-sm">
-                {a.label}
-              </span>
-            </a>
-          ))}
-        </div>
+        <ArcDial />
+
 
         <div className="mx-auto w-[82%] md:w-[64%]">
           <div className="relative overflow-hidden rounded-[2.5rem] md:rounded-[4rem]">
