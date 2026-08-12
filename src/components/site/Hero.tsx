@@ -4,32 +4,22 @@ import { ArcDial } from "./ArcDial";
 export function Hero() {
   return (
     <section id="top" className="mx-auto max-w-[1500px] px-4 pt-8 md:px-8">
-      <p className="mx-auto max-w-md text-center text-sm leading-relaxed text-muted-foreground md:text-base">
-        Сэкономим до <span className="font-semibold text-foreground">500 000 ₽</span>, покупка и
-        доставка авто под ключ за 45 дней
-      </p>
-
-      {/* Roadster-style rotating arc dial wrapping the hero panel */}
-      <div className="relative mt-10 pb-24 md:pb-32">
-        <ArcDial />
-
-
-        <div className="mx-auto w-[80%] pt-14 md:w-[56%] md:pt-24">
-          <div className="relative overflow-hidden rounded-[2.5rem] md:rounded-[4rem]">
+      <div className="relative mx-auto aspect-[4/5] w-full max-w-[1200px] overflow-hidden md:aspect-[4/3]">
+        <div className="absolute inset-x-[7%] top-[2%] h-[64%] overflow-hidden rounded-[2rem] md:inset-x-[4%] md:rounded-[3.5rem]">
             <div className="absolute inset-0 bg-[radial-gradient(120%_100%_at_50%_0%,oklch(0.5_0.19_28)_0%,oklch(0.26_0.09_28)_55%,oklch(0.19_0.02_285)_100%)]" />
             <img
               src={heroCar}
               alt="Красный седан с аукциона Японии"
               width={1600}
               height={912}
-              className="relative h-[380px] w-full object-cover mix-blend-luminosity opacity-70 md:h-[520px]"
+              className="relative size-full object-cover mix-blend-luminosity opacity-70"
             />
             <div className="absolute inset-0 flex flex-col justify-between p-6 text-center md:p-12">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.45em] text-primary-foreground/70">
                   Тояма Авто
                 </p>
-                <h1 className="mt-4 text-3xl font-extrabold uppercase leading-[0.95] tracking-tight md:text-6xl">
+                <h1 className="mt-4 text-2xl font-extrabold uppercase leading-[0.95] md:text-6xl">
                   Авто с аукционов
                   <br />с доставкой во Владивосток
                 </h1>
@@ -39,18 +29,20 @@ export function Hero() {
                 на ближайшие 3 дня
               </p>
             </div>
-          </div>
         </div>
 
-        {/* Two arc-cut panels from the mockup */}
-        <div className="mt-8 grid gap-4 px-[2%] md:mt-12 md:grid-cols-2 md:gap-8">
-          <ArcPanel
-            side="left"
-            title="Преимущества работы с ТОЯМА АВТО"
-            href="#about"
-          />
-          <ArcPanel side="right" title="Схема покупки автомобиля с нами" href="#scheme" />
-        </div>
+        <p className="absolute left-1/2 top-[3.5%] z-30 w-[72%] -translate-x-1/2 text-center text-[10px] leading-relaxed text-primary-foreground/75 md:w-auto md:text-sm">
+          Сэкономим до <span className="font-semibold text-primary-foreground">500 000 ₽</span>, покупка и доставка авто под ключ за 45 дней
+        </p>
+
+        <ArcDial />
+
+        <a href="#about" className="absolute bottom-[4%] left-[4%] z-30 flex h-[17%] w-[43%] items-end p-4 text-sm font-bold leading-snug md:p-8 md:text-2xl">
+          Преимущества работы с ТОЯМА АВТО
+        </a>
+        <a href="#scheme" className="absolute bottom-[4%] right-[4%] z-30 flex h-[17%] w-[43%] items-end p-4 text-sm font-bold leading-snug md:p-8 md:text-2xl">
+          Схема покупки автомобиля с нами
+        </a>
       </div>
 
       <div className="rounded-3xl bg-card p-5 card-shadow md:p-8">
@@ -78,31 +70,6 @@ export function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ArcPanel({
-  side,
-  title,
-  href,
-}: {
-  side: "left" | "right";
-  title: string;
-  href: string;
-}) {
-  return (
-    <a
-      href={href}
-      className="relative flex min-h-[190px] items-end overflow-hidden rounded-3xl bg-card p-6 transition-colors hover:bg-surface-2 md:min-h-[230px] md:p-8"
-    >
-      <span
-        aria-hidden
-        className={`absolute -top-[70%] h-[110%] w-[150%] rounded-b-[100%] bg-background ${
-          side === "left" ? "-right-[35%]" : "-left-[35%]"
-        }`}
-      />
-      <span className="relative text-lg font-bold leading-snug md:text-2xl">{title}</span>
-    </a>
   );
 }
 

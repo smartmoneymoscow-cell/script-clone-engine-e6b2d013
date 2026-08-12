@@ -1,128 +1,110 @@
 import { useEffect, useRef, useState } from "react";
 
 const items = [
-  { num: "01", label: "о нас", href: "#about" },
-  { num: "02", label: "доставка по России", href: "#delivery" },
-  { num: "03", label: "отзывы", href: "#reviews" },
-  { num: "04", label: "вопросы и ответы", href: "#faq" },
-  { num: "05", label: "контакты", href: "#contacts" },
+  { num: "01", label: "о нас", href: "#about", angle: 156 },
+  { num: "02", label: "доставка по России", href: "#delivery", angle: 124 },
+  { num: "03", label: "отзывы", href: "#reviews", angle: 90 },
+  { num: "04", label: "вопросы и ответы", href: "#faq", angle: 56 },
+  { num: "05", label: "контакты", href: "#contacts", angle: 24 },
 ];
 
-/** Angles along the upper arc: 180deg (left) → 360deg (right) */
-const angles = [196, 228, 270, 312, 344];
-
-const R = 300;
-const CX = 320;
-const CY = 320;
+const CX = 600;
+const CY = 238;
+const R = 548;
 
 function polar(angleDeg: number, radius: number) {
-  const a = (angleDeg * Math.PI) / 180;
-  const r3 = (n: number) => (Math.round(n * 100) / 100).toFixed(2);
-  return { x: r3(CX + radius * Math.cos(a)), y: r3(CY + radius * Math.sin(a)) };
+  const angle = (angleDeg * Math.PI) / 180;
+  return {
+    x: CX + radius * Math.cos(angle),
+    y: CY + radius * Math.sin(angle),
+  };
 }
 
 export function ArcDial() {
   const ref = useRef<HTMLDivElement>(null);
-  const [rot, setRot] = useState(0);
+  const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
     let frame = 0;
-    const onScroll = () => {
+    const update = () => {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
-        const el = ref.current;
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-        setRot(progress * 60 - 30);
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect) return;
+        const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / window.innerHeight));
+        setRotation((progress - 0.5) * 18);
       });
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+    window.addEventListener("scroll", update, { passive: true });
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", update);
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);
 
-  const ticks = Array.from({ length: 61 }, (_, i) => 180 + i * 3);
+  const ticks = Array.from({ length: 120 }, (_, index) => index * 3);
 
   return (
-    <div ref={ref} className="pointer-events-none absolute inset-x-0 top-0 z-10 h-full">
-      <svg
-        viewBox="0 0 640 340"
-        className="absolute inset-x-0 top-0 mx-auto w-full max-w-[1380px]"
-        aria-hidden
-      >
-        {/* rotating dial: ticks + rim */}
+    <div ref={ref} className="pointer-events-none absolute inset-0 z-20">
+      <svg viewBox="0 0 1200 900" className="absolute inset-0 size-full" aria-hidden>
         <g
           style={{
-            transform: `rotate(${rot}deg)`,
+            transform: `rotate(${rotation}deg)`,
             transformOrigin: `${CX}px ${CY}px`,
             transition: "transform 120ms linear",
           }}
         >
-          <circle
-            cx={CX}
-            cy={CY}
-            r={R}
+          <circle cx={CX} cy={CY} r={R} fill="none" stroke="var(--color-border)" strokeWidth="2" />
+          <path
+            d={ticks
+              .map((angle, index) => {
+                const major = index % 5 === 0;
+                const start = polar(angle, R - (major ? 24 : 12));
+                const end = polar(angle, R);
+                return `M${start.x.toFixed(2)} ${start.y.toFixed(2)}L${end.x.toFixed(2)} ${end.y.toFixed(2)}`;
+              })
+              .join(" ")}
             fill="none"
             stroke="var(--color-border)"
-            strokeWidth="1"
+            strokeWidth="2"
           />
           <path
             d={ticks
-              .map((a, i) => {
-                const major = i % 5 === 0;
-                const p1 = polar(a, R - (major ? 16 : 8));
-                const p2 = polar(a, R);
-                return `M${p1.x} ${p1.y}L${p2.x} ${p2.y}`;
+              .filter((_, index) => index % 5 === 0)
+              .map((angle) => {
+                const start = polar(angle, R - 25);
+                const end = polar(angle, R + 1);
+                return `M${start.x.toFixed(2)} ${start.y.toFixed(2)}L${end.x.toFixed(2)} ${end.y.toFixed(2)}`;
               })
               .join(" ")}
-            stroke="var(--color-border)"
-            strokeWidth="1"
-            opacity="0.5"
-          />
-          <path
-            d={ticks
-              .filter((_, i) => i % 5 === 0)
-              .map((a) => {
-                const p1 = polar(a, R - 16);
-                const p2 = polar(a, R);
-                return `M${p1.x} ${p1.y}L${p2.x} ${p2.y}`;
-              })
-              .join(" ")}
+            fill="none"
             stroke="var(--color-primary)"
-            strokeWidth="1.6"
-            opacity="0.9"
+            strokeWidth="3"
           />
         </g>
+
+        <path d="M8 590 Q270 814 585 832 L585 900 L8 900 Z" fill="var(--color-card)" />
+        <path d="M615 832 Q930 814 1192 590 L1192 900 L615 900 Z" fill="var(--color-card)" />
       </svg>
 
-      {/* static labels placed along the same arc */}
-      <div className="absolute inset-x-0 top-0 mx-auto aspect-[640/340] w-full max-w-[1380px]">
-        {items.map((it, i) => {
-          const p = polar(angles[i]!, R + 4);
-          const left = (Number(p.x) / 640) * 100;
-          const top = (Number(p.y) / 340) * 100;
-          return (
-            <a
-              key={it.num}
-              href={it.href}
-              className="group pointer-events-auto absolute w-32 -translate-x-1/2 -translate-y-1/2 text-center"
-              style={{ left: `${left}%`, top: `${top}%` }}
-            >
-              <span className="block text-[11px] font-extrabold tracking-widest text-primary">
-                {it.num}
-              </span>
-              <span className="mt-1 block text-[11px] leading-tight text-muted-foreground transition-colors group-hover:text-foreground md:text-sm">
-                {it.label}
-              </span>
-            </a>
-          );
-        })}
-      </div>
+      {items.map((item) => {
+        const position = polar(item.angle, R - 52);
+        return (
+          <a
+            key={item.num}
+            href={item.href}
+            className="group pointer-events-auto absolute w-28 -translate-x-1/2 -translate-y-1/2 text-center md:w-36"
+            style={{ left: `${(position.x / 1200) * 100}%`, top: `${(position.y / 900) * 100}%` }}
+          >
+            <span className="block text-[9px] font-extrabold text-primary md:text-xs">{item.num}</span>
+            <span className="mt-1 block text-[9px] leading-tight text-muted-foreground transition-colors group-hover:text-foreground md:text-xs">
+              {item.label}
+            </span>
+          </a>
+        );
+      })}
     </div>
   );
 }
