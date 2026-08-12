@@ -53,7 +53,7 @@ export function ArcDial() {
   }, []);
 
   return (
-    <div ref={ref} className="relative -mt-[6%] w-full" style={{ aspectRatio: `${W} / ${H}` }}>
+    <div ref={ref} className="relative -mt-[17%] w-full" style={{ aspectRatio: `${W} / ${H}` }}>
       <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 size-full" aria-hidden>
         <defs>
           <clipPath id="dial-clip">
