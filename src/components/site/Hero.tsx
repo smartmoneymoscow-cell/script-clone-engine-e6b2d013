@@ -1,30 +1,30 @@
 import heroCar from "@/assets/hero-car.jpg";
 
 const arc = [
-  { num: "01", label: "о нас", href: "#about", pos: "left-0 top-[6%] md:top-[10%]" },
+  { num: "01", label: "о нас", href: "#about", pos: "left-0 top-[4%]" },
   {
     num: "02",
     label: "доставка по России",
     href: "#delivery",
-    pos: "left-[10%] top-[38%] md:top-[42%]",
+    pos: "left-0 top-[34%] md:left-[2%]",
   },
   {
     num: "03",
     label: "отзывы",
     href: "#reviews",
-    pos: "left-1/2 -translate-x-1/2 bottom-[2%]",
+    pos: "left-1/2 -translate-x-1/2 top-[60%] md:top-[58%] text-center",
   },
   {
     num: "04",
     label: "вопросы и ответы",
     href: "#faq",
-    pos: "right-[10%] top-[38%] md:top-[42%] text-right",
+    pos: "right-0 top-[34%] text-right md:right-[2%]",
   },
   {
     num: "05",
     label: "контакты",
     href: "#contacts",
-    pos: "right-0 top-[6%] md:top-[10%] text-right",
+    pos: "right-0 top-[4%] text-right",
   },
 ];
 
