@@ -14,9 +14,9 @@ export function Hero() {
               height={912}
               className="relative size-full object-cover mix-blend-luminosity opacity-70"
             />
-            <div className="absolute inset-0 flex flex-col justify-between p-6 text-center md:p-12">
+            <div className="absolute inset-0 flex flex-col justify-between px-5 pb-5 pt-14 text-center md:p-12">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.45em] text-primary-foreground/70">
+                <p className="hidden text-[10px] font-bold uppercase tracking-[0.45em] text-primary-foreground/70 md:block">
                   Тояма Авто
                 </p>
                 <h1 className="mt-4 text-2xl font-extrabold uppercase leading-[0.95] md:text-6xl">
@@ -37,10 +37,10 @@ export function Hero() {
 
         <ArcDial />
 
-        <a href="#about" className="absolute bottom-[4%] left-[4%] z-30 flex h-[17%] w-[43%] items-end p-4 text-sm font-bold leading-snug md:p-8 md:text-2xl">
+        <a href="#about" className="absolute bottom-[2%] left-[4%] z-30 flex h-[24%] w-[43%] items-end p-3 text-xs font-bold leading-snug md:h-[20%] md:p-8 md:text-2xl">
           Преимущества работы с ТОЯМА АВТО
         </a>
-        <a href="#scheme" className="absolute bottom-[4%] right-[4%] z-30 flex h-[17%] w-[43%] items-end p-4 text-sm font-bold leading-snug md:p-8 md:text-2xl">
+        <a href="#scheme" className="absolute bottom-[2%] right-[4%] z-30 flex h-[24%] w-[43%] items-end p-3 text-xs font-bold leading-snug md:h-[20%] md:p-8 md:text-2xl">
           Схема покупки автомобиля с нами
         </a>
       </div>

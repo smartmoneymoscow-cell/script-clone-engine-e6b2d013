@@ -48,7 +48,12 @@ export function ArcDial() {
 
   return (
     <div ref={ref} className="pointer-events-none absolute inset-0 z-20">
-      <svg viewBox="0 0 1200 900" className="absolute inset-0 size-full" aria-hidden>
+      <svg
+        viewBox="0 0 1200 900"
+        preserveAspectRatio="none"
+        className="absolute inset-0 size-full"
+        aria-hidden
+      >
         <g
           style={{
             transform: `rotate(${rotation}deg)`,
