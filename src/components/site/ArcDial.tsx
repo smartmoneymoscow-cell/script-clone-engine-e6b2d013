@@ -5,6 +5,8 @@ const H = 600;
 const CX = 600;
 const CY = -260;
 const R = 760;
+const VB_TOP = 185;
+const VB_H = H - VB_TOP;
 
 const items = [
   { num: "01", label: "о нас", href: "#about", angle: 137 },
@@ -117,7 +119,7 @@ export function ArcDial() {
             key={item.num}
             href={item.href}
             className="group absolute w-24 -translate-x-1/2 -translate-y-1/2 text-center md:w-36"
-            style={{ left: `${(p.x / W) * 100}%`, top: `${(p.y / H) * 100}%` }}
+            style={{ left: `${(p.x / W) * 100}%`, top: `${((p.y - VB_TOP) / VB_H) * 100}%` }}
           >
             <span className="block text-[9px] font-extrabold text-primary md:text-xs">{item.num}</span>
             <span className="mt-1 block text-[8px] leading-tight text-muted-foreground transition-colors group-hover:text-foreground md:text-xs">
