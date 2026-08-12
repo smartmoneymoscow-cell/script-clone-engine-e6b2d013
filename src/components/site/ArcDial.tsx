@@ -104,8 +104,8 @@ export function ArcDial() {
       <div className="absolute inset-x-0 top-0 mx-auto aspect-[640/340] w-full max-w-[1500px]">
         {items.map((it, i) => {
           const p = polar(angles[i]!, R + 4);
-          const left = (p.x / 640) * 100;
-          const top = (p.y / 340) * 100;
+          const left = (Number(p.x) / 640) * 100;
+          const top = (Number(p.y) / 340) * 100;
           return (
             <a
               key={it.num}
