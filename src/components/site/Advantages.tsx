@@ -39,8 +39,8 @@ export function Advantages() {
     <section id="about" className="mx-auto max-w-[1500px] px-4 py-8 md:px-8">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <div className="flex items-center rounded-3xl bg-card p-8">
-          <h2 className="text-3xl font-bold leading-tight md:text-4xl">
-            Преимущества работы с&nbsp;ТОЯМА АВТО
+          <h2 className="text-balance text-2xl font-bold leading-tight md:text-3xl">
+            Преимущества работы с ТОЯМА&nbsp;АВТО
           </h2>
         </div>
 
