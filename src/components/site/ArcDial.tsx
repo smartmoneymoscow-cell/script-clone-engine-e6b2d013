@@ -52,7 +52,7 @@ export function ArcDial() {
     <div ref={ref} className="pointer-events-none absolute inset-x-0 top-0 z-10 h-full">
       <svg
         viewBox="0 0 640 340"
-        className="absolute inset-x-0 top-0 mx-auto w-full max-w-[1500px]"
+        className="absolute inset-x-0 top-0 mx-auto w-full max-w-[1380px]"
         aria-hidden
       >
         {/* rotating dial: ticks + rim */}
@@ -101,7 +101,7 @@ export function ArcDial() {
       </svg>
 
       {/* static labels placed along the same arc */}
-      <div className="absolute inset-x-0 top-0 mx-auto aspect-[640/340] w-full max-w-[1500px]">
+      <div className="absolute inset-x-0 top-0 mx-auto aspect-[640/340] w-full max-w-[1380px]">
         {items.map((it, i) => {
           const p = polar(angles[i]!, R + 4);
           const left = (Number(p.x) / 640) * 100;

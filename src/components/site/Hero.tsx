@@ -14,7 +14,7 @@ export function Hero() {
         <ArcDial />
 
 
-        <div className="mx-auto w-[80%] md:w-[56%]">
+        <div className="mx-auto mt-16 w-[80%] md:mt-24 md:w-[56%]">
           <div className="relative overflow-hidden rounded-[2.5rem] md:rounded-[4rem]">
             <div className="absolute inset-0 bg-[radial-gradient(120%_100%_at_50%_0%,oklch(0.5_0.19_28)_0%,oklch(0.26_0.09_28)_55%,oklch(0.19_0.02_285)_100%)]" />
             <img
