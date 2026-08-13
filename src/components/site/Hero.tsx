@@ -2,14 +2,14 @@ import { ArcDial } from "./ArcDial";
 
 export function Hero() {
   return (
-    <section id="top" className="mx-auto max-w-[1500px] px-4 pt-8 md:px-8">
-      <div className="mx-auto w-full max-w-[1200px]">
+    <section id="top" className="w-full pt-4 md:pt-6">
+      <div className="w-full">
         <ArcDial />
       </div>
 
 
 
-      <div className="rounded-3xl bg-card p-5 card-shadow md:p-8">
+      <div className="mx-4 rounded-3xl bg-card p-5 card-shadow md:mx-8 md:p-8 xl:mx-auto xl:max-w-[1440px]">
         <div className="grid gap-4 md:grid-cols-3">
           <Select label="Страна" value="Япония" />
           <Select label="Марка" value="Все марки" />
