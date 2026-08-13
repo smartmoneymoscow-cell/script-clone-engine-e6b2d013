@@ -4,11 +4,9 @@ export function Hero() {
   return (
     <section id="top" className="mx-auto max-w-[1500px] px-4 pt-8 md:px-8">
       <div className="mx-auto w-full max-w-[1200px]">
-        <p className="mx-auto max-w-2xl pb-4 text-center text-[11px] leading-relaxed text-muted-foreground md:text-sm">
-          Сэкономим до <span className="font-semibold text-foreground">500 000 ₽</span>, покупка и доставка авто под ключ за 45 дней
-        </p>
         <ArcDial />
       </div>
+
 
 
       <div className="rounded-3xl bg-card p-5 card-shadow md:p-8">
