@@ -110,13 +110,7 @@
 
 @keyframes roadster-arrival {
   0% {
-    transform: translate(-155%, -50%);
-  }
-  68% {
-    transform: translate(-47%, -50%);
-  }
-  84% {
-    transform: translate(-52%, -50%);
+    transform: translate(-165%, -50%);
   }
   100% {
     transform: translate(-50%, -50%);
@@ -124,22 +118,47 @@
 }
 
 @keyframes roadster-headlight-flash {
-  0%, 68%, 100% {
+  0%, 72%, 100% {
     opacity: 0;
-    transform: translateY(-50%) scaleX(.72);
   }
-  74%, 86% {
-    opacity: .92;
-    transform: translateY(-50%) scaleX(1);
+  78%, 88% {
+    opacity: .55;
   }
-  79%, 91% {
-    opacity: .18;
-    transform: translateY(-50%) scaleX(.82);
+  83% {
+    opacity: .12;
+  }
+}
+
+@keyframes roadster-text-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(8px);
+    letter-spacing: .18em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    letter-spacing: normal;
+  }
+}
+
+@keyframes roadster-text-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
 .roadster-car-arrival {
-  animation: roadster-arrival 2.4s cubic-bezier(.2, .72, .28, 1) both;
+  animation: roadster-arrival 2.2s cubic-bezier(.16, .84, .3, 1) both;
 }
 
 .roadster-car-image {
@@ -153,30 +172,45 @@
 
 .roadster-headlight {
   position: absolute;
-  left: 95%;
-  width: 16%;
-  height: 8%;
+  left: 79%;
+  width: 12%;
+  height: 4.5%;
   opacity: 0;
   pointer-events: none;
-  background: linear-gradient(90deg, color-mix(in oklab, var(--primary-foreground) 90%, transparent), transparent);
-  filter: blur(5px);
-  transform-origin: left center;
-  animation: roadster-headlight-flash 3.4s ease-out .4s both;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at left center, color-mix(in oklab, var(--primary-foreground) 85%, transparent) 0%, transparent 72%);
+  filter: blur(6px);
+  transform: translateY(-50%);
+  animation: roadster-headlight-flash 3.2s ease-in-out .3s both;
 }
 
 .roadster-headlight-top {
-  top: 34%;
-  rotate: -7deg;
+  top: 43%;
 }
 
 .roadster-headlight-bottom {
-  top: 66%;
-  rotate: 7deg;
+  top: 57%;
+}
+
+.roadster-title-in {
+  animation: roadster-text-rise 1.1s cubic-bezier(.2, .7, .2, 1) .15s both;
+}
+
+.roadster-sub-in {
+  animation: roadster-text-fade .9s cubic-bezier(.2, .7, .2, 1) .55s both;
+}
+
+.roadster-nav-in {
+  animation: roadster-text-fade .8s cubic-bezier(.2, .7, .2, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .roadster-car-arrival,
-  .roadster-headlight {
+  .roadster-headlight,
+  .roadster-title-in,
+  .roadster-sub-in,
+  .roadster-nav-in {
     animation: none;
   }
 }
+
