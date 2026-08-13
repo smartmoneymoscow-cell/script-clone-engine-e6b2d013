@@ -18,7 +18,7 @@ function inRange(value: number, range: string) {
     return value >= parsePrice(range);
   }
   const parts = range.split("—").map(parsePrice);
-  if (parts.length === 2) {
+  if (parts.length === 2 && parts[0] !== undefined && parts[1] !== undefined) {
     return value >= parts[0] && value <= parts[1];
   }
   return true;
