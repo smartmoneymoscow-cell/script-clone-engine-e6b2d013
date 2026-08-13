@@ -142,6 +142,15 @@
   animation: roadster-arrival 2.4s cubic-bezier(.2, .72, .28, 1) both;
 }
 
+.roadster-car-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 66.6667%;
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
 .roadster-headlight {
   position: absolute;
   left: 95%;

@@ -64,13 +64,13 @@ export function ArcDial() {
         </p>
       </div>
 
-      <div className="roadster-car-arrival absolute left-1/2 top-[37%] z-20 w-[68%] -translate-x-1/2 -translate-y-1/2 md:w-[60%]">
+      <div className="roadster-car-arrival absolute left-1/2 top-[38%] z-20 aspect-[3/2] w-[70%] md:w-[62%]">
         <img
           src={topCar}
           alt="Красный спортивный автомобиль, вид строго сверху"
           width={1024}
           height={1536}
-          className="mx-auto w-[64%] rotate-90 object-contain drop-shadow-2xl"
+          className="roadster-car-image object-contain drop-shadow-2xl"
         />
         <div className="roadster-headlight roadster-headlight-top" />
         <div className="roadster-headlight roadster-headlight-bottom" />
