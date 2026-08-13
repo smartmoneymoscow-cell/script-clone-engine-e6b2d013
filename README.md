@@ -1,14 +1,26 @@
-# Welcome to your Lovable project
+# Precise Replication Project
+
+Тебе нужно сделать ТОЧНУЮ копию этого сайта, но внести правки описанные на скринах
+
+https://toyamaauto.ru/
+
+Точно делай как описано в правках и примечаниях на скринах изучи на скрине референс и макет с примечаниии правок
+
+
+
+Точно копируй сайт
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://script-clone-engine.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c81a2d8b-9c93-45af-9444-8ae0eacb5c01).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +32,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
