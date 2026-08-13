@@ -135,14 +135,18 @@ export function ArcDial() {
         <path d={`M995 445 L1140 ${H}`} stroke="var(--color-border)" strokeWidth="1" />
       </svg>
 
-      {items.map((item) => {
+      {items.map((item, index) => {
         const point = polar(item.angle, R - 62);
         return (
           <a
             key={item.num}
             href={item.href}
-            className="group absolute z-50 w-[16%] -translate-x-1/2 -translate-y-1/2 text-center"
-            style={{ left: `${(point.x / W) * 100}%`, top: `${(point.y / H) * 100}%` }}
+            className="roadster-nav-in group absolute z-50 w-[16%] -translate-x-1/2 -translate-y-1/2 text-center"
+            style={{
+              left: `${(point.x / W) * 100}%`,
+              top: `${(point.y / H) * 100}%`,
+              animationDelay: `${0.8 + index * 0.12}s`,
+            }}
           >
             <span className="block text-xs font-extrabold tracking-wide text-foreground md:text-2xl">{item.num}</span>
             <span className="mt-1 block text-[6px] font-medium uppercase leading-tight tracking-[0.14em] text-foreground/70 transition-colors group-hover:text-foreground md:text-[10px]">
@@ -152,10 +156,18 @@ export function ArcDial() {
         );
       })}
 
-      <a href="#about" className="absolute bottom-[8%] left-[6%] z-50 w-[34%] text-[10px] font-bold leading-tight md:text-xl">
+      <a
+        href="#about"
+        className="roadster-nav-in absolute bottom-[8%] left-[6%] z-50 w-[34%] text-[10px] font-bold leading-tight md:text-xl"
+        style={{ animationDelay: "1.5s" }}
+      >
         Преимущества работы с ТОЯМА АВТО
       </a>
-      <a href="#scheme" className="absolute bottom-[8%] right-[6%] z-50 w-[34%] text-right text-[10px] font-bold leading-tight md:text-xl">
+      <a
+        href="#scheme"
+        className="roadster-nav-in absolute bottom-[8%] right-[6%] z-50 w-[34%] text-right text-[10px] font-bold leading-tight md:text-xl"
+        style={{ animationDelay: "1.5s" }}
+      >
         Схема покупки автомобиля с нами
       </a>
     </div>
