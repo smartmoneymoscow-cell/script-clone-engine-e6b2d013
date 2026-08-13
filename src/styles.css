@@ -172,24 +172,24 @@
 
 .roadster-headlight {
   position: absolute;
-  left: 79%;
-  width: 12%;
-  height: 4.5%;
+  left: 20%;
+  width: 8%;
+  height: 4%;
   opacity: 0;
   pointer-events: none;
   border-radius: 999px;
-  background: radial-gradient(ellipse at left center, color-mix(in oklab, var(--primary-foreground) 85%, transparent) 0%, transparent 72%);
-  filter: blur(6px);
+  background: radial-gradient(ellipse at right center, color-mix(in oklab, var(--primary-foreground) 90%, transparent) 0%, transparent 70%);
+  filter: blur(4px);
   transform: translateY(-50%);
   animation: roadster-headlight-flash 3.2s ease-in-out .3s both;
 }
 
 .roadster-headlight-top {
-  top: 43%;
+  top: 36%;
 }
 
 .roadster-headlight-bottom {
-  top: 57%;
+  top: 65%;
 }
 
 .roadster-title-in {
