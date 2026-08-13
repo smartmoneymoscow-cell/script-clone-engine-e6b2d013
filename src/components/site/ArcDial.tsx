@@ -69,7 +69,7 @@ export function ArcDial() {
         alt="Красный спортивный автомобиль, вид строго сверху"
         width={1024}
         height={1536}
-        className="absolute left-1/2 top-[52%] z-20 w-[52%] -translate-x-1/2 -translate-y-1/2 rotate-90 drop-shadow-2xl md:w-[48%]"
+        className="absolute left-1/2 top-[46%] z-20 w-[44%] -translate-x-1/2 -translate-y-1/2 rotate-90 drop-shadow-2xl md:w-[40%]"
       />
 
 
