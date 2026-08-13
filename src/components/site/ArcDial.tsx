@@ -9,7 +9,7 @@ const CY = -180;
 const R = 800;
 const START = 41.4;
 const END = 138.6;
-const TICKS = Array.from({ length: 81 }, (_, index) => START + ((END - START) * index) / 80);
+const TICKS = Array.from({ length: 49 }, (_, index) => START + ((END - START) * index) / 48);
 
 const items = [
   { num: "01", label: "о нас", href: "#about", angle: 132 },
@@ -54,8 +54,6 @@ export function ArcDial() {
 
   return (
     <div ref={ref} className="roadster-stage relative mx-auto w-full overflow-hidden" style={{ aspectRatio: `${W} / ${H}` }}>
-      <div className="roadster-frame absolute inset-x-[8%] top-[3%] h-[54%] rounded-[2rem] border border-primary/35 md:rounded-[3.5rem]" />
-
       <h1 className="absolute inset-x-0 top-[7%] z-10 text-center text-[clamp(1.75rem,8.4vw,7rem)] font-extrabold uppercase leading-none text-foreground/90">
         ТОЯМА АВТО
       </h1>
@@ -88,34 +86,33 @@ export function ArcDial() {
         </defs>
 
         <path d={`${arcPath} L${W} ${H} L0 ${H} Z`} fill="url(#panel-shade)" />
-        <path d={arcPath} fill="none" stroke="var(--color-primary)" strokeWidth="5" filter="url(#arc-glow)" />
-        <path d={arcPath} fill="none" stroke="var(--color-primary-foreground)" strokeOpacity=".58" strokeWidth="1.5" />
+        <path d={arcPath} fill="none" stroke="var(--color-primary)" strokeWidth="6" filter="url(#arc-glow)" />
+        <path d={arcPath} fill="none" stroke="var(--color-primary-foreground)" strokeOpacity=".9" strokeWidth="1.2" />
 
         <g style={{ transform: `rotate(${rotation}deg)`, transformOrigin: `${CX}px ${CY}px`, transition: "transform 180ms linear" }}>
           <path
             d={TICKS.map((angle, index) => {
-              const major = index % 10 === 0;
-              const medium = index % 5 === 0;
-              const inner = polar(angle, R - (major ? 31 : medium ? 22 : 11));
-              const outer = polar(angle, R + (major ? 8 : 0));
+              const medium = index % 4 === 0;
+              const inner = polar(angle, R - (medium ? 15 : 8));
+              const outer = polar(angle, R - 2);
               return `M${inner.x.toFixed(1)} ${inner.y.toFixed(1)}L${outer.x.toFixed(1)} ${outer.y.toFixed(1)}`;
             }).join(" ")}
             fill="none"
             stroke="var(--color-primary-foreground)"
-            strokeOpacity=".72"
-            strokeWidth="1.5"
-          />
-          <path
-            d={TICKS.filter((_, index) => index % 10 === 0).map((angle) => {
-              const inner = polar(angle, R - 35);
-              const outer = polar(angle, R + 10);
-              return `M${inner.x.toFixed(1)} ${inner.y.toFixed(1)}L${outer.x.toFixed(1)} ${outer.y.toFixed(1)}`;
-            }).join(" ")}
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="4"
+            strokeOpacity=".7"
+            strokeWidth="1.25"
           />
         </g>
+
+        {items.map((item) => {
+          const point = polar(item.angle, R);
+          return (
+            <g key={`marker-${item.num}`}>
+              <circle cx={point.x} cy={point.y} r="7" fill="var(--color-primary)" filter="url(#arc-glow)" />
+              <circle cx={point.x} cy={point.y} r="2.5" fill="var(--color-primary-foreground)" />
+            </g>
+          );
+        })}
 
         <path d={`M600 620 L600 ${H}`} stroke="var(--color-border)" strokeWidth="1" />
         <path d={`M185 430 L35 ${H}`} stroke="var(--color-border)" strokeWidth="1" />
@@ -123,16 +120,16 @@ export function ArcDial() {
       </svg>
 
       {items.map((item) => {
-        const point = polar(item.angle, R - 49);
+        const point = polar(item.angle, R - 57);
         return (
           <a
             key={item.num}
             href={item.href}
-            className="group absolute z-50 w-[18%] -translate-x-1/2 -translate-y-1/2 text-center"
+            className="group absolute z-50 w-[19%] -translate-x-1/2 -translate-y-1/2 text-center"
             style={{ left: `${(point.x / W) * 100}%`, top: `${(point.y / H) * 100}%` }}
           >
-            <span className="block text-[9px] font-extrabold text-foreground md:text-base">{item.num}</span>
-            <span className="mt-1 block text-[6px] leading-tight text-muted-foreground transition-colors group-hover:text-foreground md:text-[11px]">{item.label}</span>
+            <span className="block text-xs font-extrabold text-foreground md:text-xl">{item.num}</span>
+            <span className="mt-1 block text-[7px] font-semibold uppercase leading-tight text-foreground/80 transition-colors group-hover:text-foreground md:text-xs">{item.label}</span>
           </a>
         );
       })}
