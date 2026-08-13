@@ -26,13 +26,15 @@ function inRange(value: number, range: string) {
 
 function getOptions(label: string, cars: Car[], placeholder: string) {
   if (label === "Марка") {
-    const brands = Array.from(new Set(cars.map((c) => c.title.split(" ")[0])));
+    const brands = Array.from(
+      new Set(cars.map((c) => c.title.split(" ")[0] ?? ""))
+    ).filter(Boolean);
     return [placeholder, ...brands];
   }
   if (label === "Модель") {
     const models = Array.from(
-      new Set(cars.map((c) => c.title.split(" ").slice(1, 2).join(" ")).filter(Boolean))
-    );
+      new Set(cars.map((c) => c.title.split(" ")[1] ?? ""))
+    ).filter(Boolean);
     return [placeholder, ...models];
   }
   if (label === "Год выпуска") {
@@ -106,7 +108,7 @@ export function CatalogSection({
             <FormSelect
               key={f.label}
               label={f.label}
-              value={filters[f.label]}
+              value={filters[f.label] ?? f.placeholder}
               placeholder={f.placeholder}
               options={getOptions(f.label, cars, f.placeholder)}
               onChange={(v) => {

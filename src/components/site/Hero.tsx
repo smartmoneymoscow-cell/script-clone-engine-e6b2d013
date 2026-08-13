@@ -37,7 +37,7 @@ export function Hero() {
   const [model, setModel] = useState("Все модели");
   const [price, setPrice] = useState({ min: 0, max: 25_000_000 });
 
-  const brands = ["Все марки", ...countries[country]];
+  const brands = ["Все марки", ...(countries[country] ?? [])];
 
   const handleSearch = () => {
     document.getElementById("japan")?.scrollIntoView({ behavior: "smooth" });
