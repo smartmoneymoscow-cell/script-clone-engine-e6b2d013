@@ -54,11 +54,11 @@ export function ArcDial() {
 
   return (
     <div ref={ref} className="roadster-stage relative mx-auto w-full overflow-hidden" style={{ aspectRatio: `${W} / ${H}` }}>
-      <h1 className="absolute inset-x-0 top-[3%] z-30 text-center text-[clamp(2rem,9vw,7rem)] font-extrabold uppercase leading-none tracking-tight text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
+      <h1 className="absolute inset-x-0 top-[4%] z-30 text-center text-[clamp(1.5rem,5vw,4.25rem)] font-extrabold uppercase leading-none text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
         ТОЯМА АВТО
       </h1>
 
-      <div className="absolute inset-x-[18%] top-[17%] z-30 text-center">
+      <div className="absolute inset-x-[18%] top-[14%] z-30 text-center">
         <p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-foreground/90 md:text-sm">
           Автомобили с аукционов под ключ
         </p>
@@ -69,7 +69,7 @@ export function ArcDial() {
         alt="Красный спортивный автомобиль, вид строго сверху"
         width={1024}
         height={1536}
-        className="absolute left-1/2 top-[46%] z-20 w-[44%] -translate-x-1/2 -translate-y-1/2 rotate-90 drop-shadow-2xl md:w-[40%]"
+        className="absolute left-1/2 top-[46%] z-20 h-[59%] w-auto max-w-[34%] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-2xl"
       />
 
 
