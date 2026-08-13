@@ -53,24 +53,28 @@ export function ArcDial() {
   }, []);
 
   return (
-    <div ref={ref} className="roadster-stage relative mx-auto w-full overflow-hidden" style={{ aspectRatio: `${W} / ${H}` }}>
-      <h1 className="absolute inset-x-0 top-[4%] z-30 text-center text-[clamp(1.5rem,5vw,4.25rem)] font-extrabold uppercase leading-none text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
+    <div ref={ref} className="roadster-stage relative w-full overflow-hidden" style={{ aspectRatio: `${W} / ${H}` }}>
+      <h1 className="absolute inset-x-0 top-[6%] z-30 text-center text-[clamp(1.7rem,5.2vw,4.6rem)] font-extrabold uppercase leading-none text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
         ТОЯМА АВТО
       </h1>
 
-      <div className="absolute inset-x-[18%] top-[14%] z-30 text-center">
+      <div className="absolute inset-x-[18%] top-[15%] z-30 text-center">
         <p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-foreground/90 md:text-sm">
           Автомобили с аукционов под ключ
         </p>
       </div>
 
-      <img
-        src={topCar}
-        alt="Красный спортивный автомобиль, вид строго сверху"
-        width={1024}
-        height={1536}
-        className="absolute left-1/2 top-[40%] z-20 h-[46%] w-auto max-w-[30%] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-2xl"
-      />
+      <div className="roadster-car-arrival absolute left-1/2 top-[38%] z-20 aspect-[3/2] w-[70%] md:w-[62%]">
+        <img
+          src={topCar}
+          alt="Красный спортивный автомобиль, вид строго сверху"
+          width={1024}
+          height={1536}
+          className="roadster-car-image object-contain drop-shadow-2xl"
+        />
+        <div className="roadster-headlight roadster-headlight-top" />
+        <div className="roadster-headlight roadster-headlight-bottom" />
+      </div>
 
 
       <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 z-40 size-full" aria-hidden>
