@@ -14,10 +14,22 @@ export function SiteHeader() {
   const hero = !scrolled;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = (e?: Event) => {
+      const target = e?.target as HTMLElement | Document | null;
+      const top =
+        target && target !== document && (target as HTMLElement).scrollTop !== undefined
+          ? (target as HTMLElement).scrollTop
+          : window.scrollY || document.documentElement.scrollTop;
+      setScrolled(top > 80);
+    };
     onScroll();
+    // capture:true so scrolling inside any container is detected
+    document.addEventListener("scroll", onScroll, { passive: true, capture: true });
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      document.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
