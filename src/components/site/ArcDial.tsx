@@ -158,18 +158,25 @@ export function ArcDial() {
 
       <a
         href="#about"
-        className="roadster-nav-in absolute bottom-[8%] left-[6%] z-50 w-[34%] text-[10px] font-bold leading-tight md:text-xl"
+        className="roadster-pedal roadster-nav-in group absolute bottom-[6%] left-[4%] z-50 flex w-[38%] items-center gap-2 px-4 py-3 text-left md:gap-3 md:px-7 md:py-6"
         style={{ animationDelay: "1.5s" }}
       >
-        Преимущества работы с ТОЯМА АВТО
+        <Sparkles className="size-4 shrink-0 text-primary md:size-7" />
+        <span className="text-[10px] font-bold leading-tight md:text-xl">
+          Преимущества работы с ТОЯМА АВТО
+        </span>
       </a>
       <a
         href="#scheme"
-        className="roadster-nav-in absolute bottom-[8%] right-[6%] z-50 w-[34%] text-right text-[10px] font-bold leading-tight md:text-xl"
+        className="roadster-pedal roadster-nav-in group absolute bottom-[6%] right-[4%] z-50 flex w-[38%] items-center justify-end gap-2 px-4 py-3 text-right md:gap-3 md:px-7 md:py-6"
         style={{ animationDelay: "1.5s" }}
       >
-        Схема покупки автомобиля с нами
+        <span className="text-[10px] font-bold leading-tight md:text-xl">
+          Схема покупки автомобиля с нами
+        </span>
+        <Route className="size-4 shrink-0 text-primary md:size-7" />
       </a>
+
     </div>
   );
 }
