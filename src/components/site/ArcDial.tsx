@@ -1,3 +1,4 @@
+import { Route, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import topCar from "@/assets/top-down-red-sports-car.png";
