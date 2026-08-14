@@ -34,9 +34,9 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
+      className={`isolate sticky top-0 z-[100] transition-colors duration-300 ${
         scrolled
-          ? "border-b border-border bg-background backdrop-blur"
+          ? "border-b border-border bg-background"
           : "border-transparent bg-transparent"
       }`}
     >
