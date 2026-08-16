@@ -159,7 +159,7 @@ export function ArcDial() {
 
       <a
         href="#about"
-        className="roadster-pedal roadster-nav-in group absolute bottom-[6%] left-[4%] z-50 flex w-[38%] items-center gap-2 px-4 py-3 text-left md:gap-3 md:px-7 md:py-6"
+        className="roadster-panel roadster-panel-left roadster-nav-in group absolute bottom-0 left-0 z-50 flex items-end gap-2 px-4 py-5 text-left md:gap-3 md:px-8 md:py-7"
         style={{ animationDelay: "1.5s" }}
       >
         <Sparkles className="size-4 shrink-0 text-primary md:size-7" />
@@ -169,7 +169,7 @@ export function ArcDial() {
       </a>
       <a
         href="#scheme"
-        className="roadster-pedal roadster-nav-in group absolute bottom-[6%] right-[4%] z-50 flex w-[38%] items-center justify-end gap-2 px-4 py-3 text-right md:gap-3 md:px-7 md:py-6"
+        className="roadster-panel roadster-panel-right roadster-nav-in group absolute bottom-0 right-0 z-50 flex items-end justify-end gap-2 px-4 py-5 text-right md:gap-3 md:px-8 md:py-7"
         style={{ animationDelay: "1.5s" }}
       >
         <span className="text-[10px] font-bold leading-tight md:text-xl">

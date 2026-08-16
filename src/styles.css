@@ -113,38 +113,47 @@
   border-color: transparent;
 }
 
-@utility roadster-pedal {
-  border-radius: 1.5rem;
-  border: 1px solid color-mix(in oklab, var(--primary-foreground) 18%, transparent);
+@utility roadster-panel {
+  width: 48%;
+  height: 58.9%;
+  padding: clamp(0.75rem, 2.2vw, 2rem);
   background:
     linear-gradient(
       180deg,
-      color-mix(in oklab, var(--primary-foreground) 12%, transparent) 0%,
-      color-mix(in oklab, oklch(0.2 0.01 285) 78%, transparent) 55%,
-      color-mix(in oklab, oklch(0.15 0.01 285) 88%, transparent) 100%
+      oklch(0.35 0.005 285) 0%,
+      oklch(0.25 0.005 285) 100%
     );
+  border: 1px solid color-mix(in oklab, var(--primary-foreground) 30%, transparent);
   box-shadow:
-    inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 22%, transparent),
-    0 14px 30px -14px oklch(0 0 0 / 75%);
-  backdrop-filter: blur(6px);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 32%, transparent),
+    0 22px 55px -20px oklch(0 0 0 / 75%);
+  backdrop-filter: blur(8px);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   will-change: transform;
 }
 
-.roadster-pedal:hover {
+.roadster-panel-left {
+  clip-path: polygon(0 0, 10% 6%, 20% 14%, 30% 22%, 40% 29%, 50% 36%, 60% 41%, 70% 44%, 80% 46%, 90% 48%, 95% 54%, 95% 100%, 0 100%);
+}
+
+.roadster-panel-right {
+  clip-path: polygon(5% 54%, 10% 48%, 20% 46%, 30% 44%, 40% 41%, 50% 36%, 60% 29%, 70% 22%, 80% 14%, 90% 6%, 100% 0, 100% 100%, 5% 100%);
+}
+
+.roadster-panel:hover {
   border-color: color-mix(in oklab, var(--primary) 55%, transparent);
   box-shadow:
     inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 28%, transparent),
-    0 18px 38px -14px oklch(0 0 0 / 80%),
-    0 0 26px color-mix(in oklab, var(--primary) 30%, transparent);
-  transform: translateY(-2px);
+    0 22px 55px -20px oklch(0 0 0 / 85%),
+    0 0 28px color-mix(in oklab, var(--primary) 22%, transparent);
+  transform: translateY(-3px);
 }
 
-.roadster-pedal:active {
-  transform: translateY(3px) scale(.985);
+.roadster-panel:active {
+  transform: translateY(2px) scale(.99);
   box-shadow:
-    inset 0 3px 10px oklch(0 0 0 / 55%),
-    0 4px 12px -8px oklch(0 0 0 / 70%);
+    inset 0 3px 12px oklch(0 0 0 / 55%),
+    0 6px 14px -10px oklch(0 0 0 / 70%);
 }
 
 
