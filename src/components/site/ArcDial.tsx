@@ -2,7 +2,7 @@ import { Route, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import topCar from "@/assets/top-down-red-sports-car.png";
-import treadTexture from "@/assets/premium-tread-texture.png.asset.json";
+import treadTexture from "@/assets/premium-tread-texture.png";
 
 
 const W = 1200;
@@ -164,7 +164,7 @@ export function ArcDial() {
         className="roadster-panel roadster-panel-left roadster-nav-in group absolute bottom-0 left-[2%] z-50 text-center"
         style={{ animationDelay: "1.5s" }}
       >
-        <img src={treadTexture.url} alt="" className="roadster-panel-texture" aria-hidden />
+        <img src={treadTexture} alt="" className="roadster-panel-texture" aria-hidden />
         <span className="roadster-panel-content">
           <Sparkles className="size-5 shrink-0 text-primary md:size-8" />
           <span className="text-xs font-bold leading-tight md:text-2xl">
@@ -177,7 +177,7 @@ export function ArcDial() {
         className="roadster-panel roadster-panel-right roadster-nav-in group absolute bottom-0 right-[2%] z-50 text-center"
         style={{ animationDelay: "1.5s" }}
       >
-        <img src={treadTexture.url} alt="" className="roadster-panel-texture" aria-hidden />
+        <img src={treadTexture} alt="" className="roadster-panel-texture" aria-hidden />
         <span className="roadster-panel-content">
           <Route className="size-5 shrink-0 text-primary md:size-8" />
           <span className="text-xs font-bold leading-tight md:text-2xl">
