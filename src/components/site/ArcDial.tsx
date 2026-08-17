@@ -161,7 +161,7 @@ export function ArcDial() {
 
       <a
         href="#about"
-        className="roadster-panel roadster-nav-in group absolute bottom-[4%] left-[4%] z-50 flex flex-col items-center justify-center gap-2 p-4 text-center md:gap-3 md:p-6"
+        className="roadster-panel roadster-panel-left roadster-nav-in group absolute bottom-0 left-[2%] z-50 flex flex-col items-center justify-center gap-2 p-4 text-center md:gap-3 md:p-6"
         style={{ animationDelay: "1.5s", "--texture-carbon": `url(${carbon.url})` } as React.CSSProperties}
       >
         <Sparkles className="size-5 shrink-0 text-primary md:size-8" />
@@ -171,7 +171,7 @@ export function ArcDial() {
       </a>
       <a
         href="#scheme"
-        className="roadster-panel roadster-nav-in group absolute bottom-[4%] right-[4%] z-50 flex flex-col items-center justify-center gap-2 p-4 text-center md:gap-3 md:p-6"
+        className="roadster-panel roadster-panel-right roadster-nav-in group absolute bottom-0 right-[2%] z-50 flex flex-col items-center justify-center gap-2 p-4 text-center md:gap-3 md:p-6"
         style={{ animationDelay: "1.5s", "--texture-carbon": `url(${carbon.url})` } as React.CSSProperties}
       >
         <Route className="size-5 shrink-0 text-primary md:size-8" />
@@ -179,6 +179,7 @@ export function ArcDial() {
           Схема покупки автомобиля с нами
         </span>
       </a>
+
 
 
     </div>
