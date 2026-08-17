@@ -117,21 +117,49 @@
 @utility roadster-panel {
   width: 36%;
   height: 48%;
+  overflow: hidden;
   background-color: oklch(0.2 0.004 285);
-  /* Чистая карбоновая текстура, сгенерированная на CSS (без картинок) */
-  background-image:
-    linear-gradient(180deg, oklch(1 0 0 / 7%) 0%, oklch(0 0 0 / 45%) 100%),
-    repeating-linear-gradient(45deg, oklch(1 0 0 / 7%) 0 3px, oklch(0 0 0 / 0%) 3px 6px),
-    repeating-linear-gradient(-45deg, oklch(1 0 0 / 5%) 0 3px, oklch(0 0 0 / 0%) 3px 6px),
-    repeating-linear-gradient(45deg, oklch(0 0 0 / 45%) 0 6px, oklch(0 0 0 / 0%) 6px 12px),
-    repeating-linear-gradient(-45deg, oklch(0 0 0 / 45%) 0 6px, oklch(0 0 0 / 0%) 6px 12px);
-  background-size: cover, 6px 6px, 6px 6px, 12px 12px, 12px 12px;
-  border: 1px solid color-mix(in oklab, var(--primary-foreground) 22%, transparent);
+  border: 2px solid color-mix(in oklab, var(--primary-foreground) 28%, transparent);
   box-shadow:
-    inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 28%, transparent),
-    0 22px 55px -20px oklch(0 0 0 / 75%);
+    inset 0 3px 2px color-mix(in oklab, var(--primary-foreground) 34%, transparent),
+    inset 0 -9px 14px oklch(0 0 0 / 60%),
+    inset 7px 0 12px oklch(0 0 0 / 32%),
+    inset -7px 0 12px oklch(0 0 0 / 32%),
+    0 10px 0 -5px oklch(0.08 0.003 285),
+    0 24px 38px -13px oklch(0 0 0 / 88%);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   will-change: transform;
+}
+
+.roadster-panel-texture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .72;
+  pointer-events: none;
+  filter: contrast(1.12) brightness(.8);
+}
+
+.roadster-panel-content {
+  position: absolute;
+  inset: 54% 8% 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  text-align: center;
+  text-shadow: 0 2px 5px oklch(0 0 0 / 90%);
+}
+
+@media (min-width: 48rem) {
+  .roadster-panel-content {
+    gap: .75rem;
+  }
 }
 
 
@@ -151,7 +179,8 @@
 .roadster-panel:hover {
   border-color: color-mix(in oklab, var(--primary) 55%, transparent);
   box-shadow:
-    inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 28%, transparent),
+    inset 0 3px 2px color-mix(in oklab, var(--primary-foreground) 38%, transparent),
+    inset 0 -9px 14px oklch(0 0 0 / 64%),
     0 22px 55px -20px oklch(0 0 0 / 85%),
     0 0 28px color-mix(in oklab, var(--primary) 22%, transparent);
   transform: translateY(-3px);
