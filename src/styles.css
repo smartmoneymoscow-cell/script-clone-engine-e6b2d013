@@ -72,6 +72,8 @@
   );
   --gradient-roadster: radial-gradient(circle at 50% 20%, oklch(0.62 0.2 27 / 82%) 0%, oklch(0.39 0.16 27 / 95%) 36%, oklch(0.16 0.03 27) 78%);
   --shadow-roadster: inset 0 0 90px oklch(0.08 0.02 27 / 80%), 0 0 55px oklch(0.62 0.215 27 / 20%);
+  --texture-carbon: none;
+
 }
 
 .dark {
