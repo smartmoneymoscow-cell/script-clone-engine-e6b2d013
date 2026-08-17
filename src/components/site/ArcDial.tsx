@@ -2,6 +2,8 @@ import { Route, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import topCar from "@/assets/top-down-red-sports-car.png";
+import carbon from "@/assets/carbon.webp.asset.json";
+
 
 const W = 1200;
 const H = 850;
