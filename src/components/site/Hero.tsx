@@ -45,7 +45,7 @@ export function Hero() {
 
   return (
     <section id="top" className="w-full -mt-16 md:-mt-20">
-      <div className="w-full">
+      <div className="w-full mb-4 md:mb-5">
         <ArcDial />
       </div>
 
