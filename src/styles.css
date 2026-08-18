@@ -119,9 +119,9 @@
   height: 48%;
   overflow: hidden;
   background-color: oklch(0.2 0.004 285);
-  border: 2px solid color-mix(in oklab, var(--primary-foreground) 28%, transparent);
-  border-bottom: 0;
+  border: 0;
   border-radius: 0 0 16px 16px;
+
   box-shadow:
     inset 0 3px 2px color-mix(in oklab, var(--primary-foreground) 34%, transparent),
     inset 0 -9px 14px oklch(0 0 0 / 60%),
