@@ -67,7 +67,7 @@ export function ArcDial() {
         </p>
       </div>
 
-      <div className="roadster-car-arrival absolute left-1/2 top-[42%] z-20 aspect-[3/2] w-[70%] md:w-[62%]">
+      <div className="roadster-car-arrival absolute left-1/2 top-[36%] z-20 aspect-[3/2] w-[62%] md:w-[54%]">
         <img
           src={topCar}
           alt="Красный спортивный автомобиль, вид строго сверху"
