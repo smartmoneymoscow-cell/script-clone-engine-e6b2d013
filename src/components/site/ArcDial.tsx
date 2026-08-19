@@ -6,7 +6,7 @@ import treadTexture from "@/assets/premium-tread-texture.png";
 
 
 const W = 1200;
-const H = 850;
+const H = 1050;
 const CX = 600;
 const CY = -180;
 const R = 800;
@@ -57,17 +57,17 @@ export function ArcDial() {
 
   return (
     <div ref={ref} className="roadster-stage relative w-full overflow-hidden" style={{ aspectRatio: `${W} / ${H}` }}>
-      <h1 className="roadster-title-in absolute inset-x-0 top-[calc(3.5rem+3%)] z-30 text-center text-[clamp(1.7rem,5.2vw,4.6rem)] font-extrabold uppercase leading-none text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
+      <h1 className="roadster-title-in absolute inset-x-0 top-[calc(3.5rem+2%)] z-30 text-center text-[clamp(1.7rem,5.2vw,4.6rem)] font-extrabold uppercase leading-none text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
         ТОЯМА АВТО
       </h1>
 
-      <div className="roadster-sub-in absolute inset-x-[18%] top-[calc(3.5rem+9%)] z-30 text-center">
+      <div className="roadster-sub-in absolute inset-x-[18%] top-[calc(3.5rem+11%)] z-30 text-center">
         <p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-foreground/90 md:text-sm">
           Автомобили с аукционов под ключ
         </p>
       </div>
 
-      <div className="roadster-car-arrival absolute left-1/2 top-[38%] z-20 aspect-[3/2] w-[70%] md:w-[62%]">
+      <div className="roadster-car-arrival absolute left-1/2 top-[42%] z-20 aspect-[3/2] w-[70%] md:w-[62%]">
         <img
           src={topCar}
           alt="Красный спортивный автомобиль, вид строго сверху"
