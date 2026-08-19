@@ -57,7 +57,7 @@ export function ArcDial() {
 
   return (
     <div ref={ref} className="roadster-stage relative w-full overflow-hidden" style={{ aspectRatio: `${W} / ${H}` }}>
-      <h1 className="roadster-title-in absolute inset-x-0 top-[calc(3.5rem+3%)] z-30 text-center text-[clamp(1.7rem,5.2vw,4.6rem)] font-extrabold uppercase leading-none text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
+      <h1 className="roadster-title-in absolute inset-x-0 top-[calc(3.5rem+2%)] z-30 text-center text-[clamp(1.7rem,5.2vw,4.6rem)] font-extrabold uppercase leading-none text-foreground drop-shadow-[0_6px_24px_rgba(0,0,0,0.55)]">
         ТОЯМА АВТО
       </h1>
 
