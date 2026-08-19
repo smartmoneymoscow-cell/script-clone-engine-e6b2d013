@@ -6,7 +6,7 @@ import treadTexture from "@/assets/premium-tread-texture.png";
 
 
 const W = 1200;
-const H = 850;
+const H = 1050;
 const CX = 600;
 const CY = -180;
 const R = 800;
