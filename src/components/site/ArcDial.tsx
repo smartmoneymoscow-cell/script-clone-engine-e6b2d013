@@ -61,7 +61,7 @@ export function ArcDial() {
         ТОЯМА АВТО
       </h1>
 
-      <div className="roadster-sub-in absolute inset-x-[18%] top-[calc(3.5rem+9%)] z-30 text-center">
+      <div className="roadster-sub-in absolute inset-x-[18%] top-[calc(3.5rem+11%)] z-30 text-center">
         <p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-foreground/90 md:text-sm">
           Автомобили с аукционов под ключ
         </p>
